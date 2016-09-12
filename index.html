@@ -1,0 +1,69 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>codelab-js-localstorage</title>
+    <script>
+    var NumberofVisits
+    if (localStorage.NumberofVisits){
+
+    NumberofVisits = parseInt( localStorage.NumberofVisits)
+    }else {
+     NumberofVisits = 0
+    }
+      NumberofVisits = NumberofVisits + 1
+
+      localStorage.setItem('NumberofVisits', NumberofVisits)
+
+   </script>
+</head>
+<body style="background-color:white">
+  <label>You have visited this site:</label> <label id="visits"></label>
+<p> Your Choise Day or Night.</p>
+<button onclick="mytheme()">Switch Theme</button>
+<script>
+function mytheme() {
+
+  if (dayornight === 0) {
+    sitebackgroupcolor="Black"
+    textcolor="Red"
+    dayornight=1
+    localStorage.setItem('dayornight', dayornight)
+  } else  {
+    sitebackgroupcolor="white"
+    textcolor="Black"
+    dayornight=0
+    localStorage.setItem('dayornight', dayornight)
+    }
+    document.body.style.backgroundColor=sitebackgroupcolor
+    document.body.style.color=textcolor
+}
+
+var dayornight
+
+if (localStorage.dayornight){
+
+dayornight = parseInt( localStorage.dayornight)
+}else {
+ dayornight = 0
+ localStorage.setItem('dayornight', dayornight)
+}
+
+if (dayornight === 0) {
+    sitebackgroupcolor="white"
+    textcolor="Black"
+} else  {
+  sitebackgroupcolor="Black"
+  textcolor="Red"
+
+}
+
+localStorage.setItem('NumberofVisits', NumberofVisits)
+
+document.getElementById('visits').innerHTML = NumberofVisits
+document.body.style.backgroundColor=sitebackgroupcolor
+document.body.style.color=textcolor
+</script>
+
+</body>
+
+</html>
