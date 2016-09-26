@@ -4,9 +4,9 @@
     <title>codelab-js-localstorage</title>
     <script>
     var NumberofVisits
-    if (localStorage.NumberofVisits){
+    if (localStorage.getItem('NumberofVisits')){
 
-    NumberofVisits = parseInt( localStorage.NumberofVisits)
+    NumberofVisits = parseInt( localStorage.getItem('NumberofVisits'))
     }else {
      NumberofVisits = 0
     }
@@ -40,9 +40,9 @@ function mytheme() {
 
 var dayornight
 
-if (localStorage.dayornight){
+if (localStorage.getItem('dayornight')){
 
-dayornight = parseInt( localStorage.dayornight)
+dayornight = parseInt( localStorage.getItem('dayornight'))
 }else {
  dayornight = 0
  localStorage.setItem('dayornight', dayornight)
